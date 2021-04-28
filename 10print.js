@@ -11,14 +11,17 @@ const FgMagenta = "\x1b[35m"
 const FgCyan = "\x1b[36m"
 const FgWhite = "\x1b[37m"
 
-const arr = ["⎞", "⎝", "⎝", ".", ":", " "]
+const arr = ["┣", "┨", " ", "┳", "╋", "  "]
 
 let w = parseInt(sw / 2)
 
 function draw () {
     setTimeout(draw, 1000/15)
-    if (w >= sw - 10) {
+    if (w >= sw - 20) {
         w -= 15
+    }
+    if (w <= 0) {
+        w += 15
     }
     if (Math.random() > 0.5) {
         w -= 3
